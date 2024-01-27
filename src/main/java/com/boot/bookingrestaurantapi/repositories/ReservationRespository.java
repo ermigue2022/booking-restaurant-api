@@ -2,13 +2,13 @@ package com.boot.bookingrestaurantapi.repositories;
 
 import java.util.Optional;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.boot.bookingrestaurantapi.entities.Reservation;
-
-import jakarta.transaction.Transactional;
 
 @Repository
 public interface ReservationRespository extends JpaRepository<Reservation, Long> {
@@ -24,3 +24,4 @@ public interface ReservationRespository extends JpaRepository<Reservation, Long>
 	Optional<Reservation> findByTurnAndRestaurantId(String turn, Long restaurantId);
 
 }
+
